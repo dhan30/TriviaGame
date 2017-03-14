@@ -1,26 +1,4 @@
 
-
-//CREATE TIMER FUNCTION
-			function countDown(a,b) {
-				var element = document.getElementById(b);
-				element.innerHTML = a +" seconds left!";
-// WHEN TIMER IS LESS THAN "1" STOP.
-				if (a < 1) {
-					clearTimeout(timer1);
-					element.innerHTML = "<h2>GAME OVER SON!!</h2>";
-					setTimeout(function(){
-						window.location.href="index-3.html";
-					})
-
-				}
-				a--;
-
-				var timer1 = setTimeout('countDown('+a+',"'+b+'")',1000);
-
-			}
-// CALL TIMER FUNCTION
-			countDown(10,"timer");
-
 // SUBMIT FUNCTION
 function onSubmit() {
 	// STORE VALUE OF CORRECT ANSWERS
@@ -54,7 +32,7 @@ function onSubmit() {
 	}
 	// CREATE VARIABLE TO CHANGE CONTENT INSIDE HTML
 	var results = document.getElementById("results");
-	results.innerHTML = "Correct Answers: " + score + " out of 5";
+	results.innerHTML = "Correct Answers: " + score + " out of  5";
 	return false;
 	
 
