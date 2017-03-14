@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang= "en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Trivia Game</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="assets/javascript/app-3.js"></script>
+	<link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper" style="background-image: url(assets/images/background.jpg);">
+	<div id="main-container">
+		<header id ="main-header">
+			<h1> Welcome to Mixed Trivia </h1>
+		</header>
+		<br>
+
+		<div id="timer"> </div>
+		<div id="results">Correct Answers: </div>
+	<form name ="quiz" id ="q-box" onsubmit ="return onSubmit()">
+	<div class="questions" id="box-1">
+	<p><span class="questions" id="question-1">Who is the 25th president of the United States of America?</span></p>
+	
+	<input type="radio" name="president" value="a" id="bt-1">a.President Mckinley</input>
+	<input type="radio" name="president" value="b" id="bt-2">b.President Thomas Jefferson</input>
+	<input type="radio" name="president" value="c" id="bt-3">c.President Truman</input>
+	<input type="radio" name="president" value="d" id="bt-4">d.President Coolidge</input>
+
+	</div>
+	
+	<div class="questions" id="box-2">
+	<p><span class="questions" id="question-2">Who was the president when World War II so finished?</span></p>
+
+	<input type="radio" name="president-1" value="a" id="bt-11">a.President Wilson
+	</input>
+	<input type="radio" name="president-1" value="b" id="bt-21">b.President Mckinley
+	</input>
+	<input type="radio" name="president-1" value="c" id="bt-31">c.President Truman
+	</input>
+	<input type="radio" name="president-1" value="d" id="bt-41">d.President Madison
+	</input>
+	</div>
+	
+	<div class="questions" id="box-3">
+	<p><span class="questions" id="question-3">Which president signed the Treaty of Versailles?</span></p>
+
+	<input type="radio" name="president-2" value="a" id="bt-111">a.President Wilson
+	</input>
+	<input type="radio" name="president-2" value="b" id="bt-211">b.President Hoover
+	</input>
+	<input type="radio" name="president-2" value="c" id="bt-311">c.President Eisenhower
+	</input>
+	<input type="radio" name="president-2" value="d" id="bt-411">d.President Truman
+	</input>
+	</div>
+
+	<div class="questions" id="box-4"><p>
+	<span class="questions" id="question-4">Which president had Polio?</span></p>
+	
+	<input type="radio" name="president-3" value="a" id="bt-1111">a.President Johnson
+	</input>
+	<input type="radio" name="president-3" value="b" id="bt-2111">b.President Mckinley
+	</input>
+	<input type="radio" name="president-3" value="c" id="bt-3111">c.President Cleveland
+	</input>
+	<input type="radio" name="president-3" value="d" id="bt-4111">d.President FDR
+	</input>
+	</div>
+
+	<div class="questions" id="box-5"><p>
+	<span class="questions" id="question-5">Which president suffered the losses of both his wife and mother on Valentine's day?</span></p>
+
+	<input type="radio" name="president-4" value="a" id="bt-1211">a.President Regan
+	</input>
+	<input type="radio" name="president-4" value="b" id="bt-2211">b.President Lincoln
+	</input>
+	<input type="radio" name="president-4" value="c" id="bt-3211">c.President Theodore Roosevelt
+	</input>
+	<input type="radio" name="president-4" value="d" id="bt-4211">d.President FDR
+	</input>
+	</div>
+
+	<button type="button" class= "button" onclick="onSubmit()"> Submit</button>
+
+	</form>
+	</div>
+</div>
+	
+<script type="text/javaScript">
+
+
+//CREATE TIMER FUNCTION
+			function countDown(a,b) {
+				var element = document.getElementById(b);
+				element.innerHTML = a +" seconds left!";
+// WHEN TIMER IS LESS THAN "1" STOP.
+				if (a < 1) {
+					clearTimeout(timer1);
+					element.innerHTML = "<h2>GAME OVER SON!!</h2>";
+					setTimeout(function(){
+						window.location.href="index-3.html";
+					})
+
+				}
+				a--;
+
+				var timer1 = setTimeout('countDown('+a+',"'+b+'")',1000);
+
+			}
+// CALL TIMER FUNCTION
+			countDown(30,"timer");
+
+
+</script>
+
+</body>
+
+</html>
